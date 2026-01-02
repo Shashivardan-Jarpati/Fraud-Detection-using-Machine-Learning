@@ -1,0 +1,22 @@
+#Project Access & Execution Details
+
+- The project is deployed as a local web application and can be accessed through a standard web browser. Once the application server is started, the portal automatically becomes available at http://127.0.0.1:5100/
+ and opens seamlessly in Google Chrome or any modern browser.
+
+- The application is designed to be platform-independent and can be executed successfully on any system without additional configuration, provided the required Python environment is set up. To run the project, users only need to install the following dependencies:
+
+Flask
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+XGBoost
+
+CatBoost
+
+LightGBM
+
+- After installing these libraries, the project can be launched directly, and all functionalities will work as intended. No external services, cloud setup, or database configuration is required, making the project easy to set up, portable, and suitable for demonstration or evaluation across different systems.

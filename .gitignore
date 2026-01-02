@@ -1,0 +1,11 @@
+# Ignore ML training output
+catboost_info/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment & logs
+.env
+*.log
+*.db
