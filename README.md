@@ -34,19 +34,19 @@ Prediction → Batch fraud detection on new data
 Sample Dataset: Bank-fraud-dataset.csv contains anonymized transactions with Time, V1-V28 (PCA features), Amount, and Class (0=Not Fraud, 1=Fraud).
 
 # Tech Stack
----Backend & ML---
+#Backend & ML
 🔧 Flask (Web Framework)
 📊 Pandas (Data Processing)
 🤖 scikit-learn (Preprocessing, Metrics, Splitting)
 ⚡ XGBoost (XGBClassifier)
 🐱 CatBoost (CatBoostClassifier) 
 🌟 LightGBM (LGBMClassifier)
----Frontend & UI---
+#Frontend & UI
 🎨 HTML5 + Jinja2 Templating
 🛠️ Bootstrap 4 (Responsive Design)
 💅 Custom CSS (Animations, Gradients)
 📱 Google Fonts (Inter, Space Grotesk)
----Data & Templates---
+#Data & Templates
 📈 Bank-fraud-dataset.csv (Labeled Training Data)
 🔮 New-bank-dataset.csv (Prediction Input)
 📊 *_metrics.html (Model Performance Reports)
