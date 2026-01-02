@@ -20,7 +20,7 @@ Future Improvements
 
 License
 
-# Overview
+## Overview
 This is a production-ready ML web app that processes banking transaction datasets to detect fraud. It handles the complete ML lifecycle:
 
 Data Upload → Preview top rows
@@ -33,7 +33,7 @@ Prediction → Batch fraud detection on new data
 
 Sample Dataset: Bank-fraud-dataset.csv contains anonymized transactions with Time, V1-V28 (PCA features), Amount, and Class (0=Not Fraud, 1=Fraud).
 
-# Tech Stack
+## Tech Stack
 ### Backend & ML 
 Flask (Web Framework)
 Pandas (Data Processing)
@@ -53,10 +53,10 @@ Bank-fraud-dataset.csv (Labeled Training Data)
 New-bank-dataset.csv (Prediction Input)
 *_metrics.html (Model Performance Reports)
 
-# Key Features
+## Key Features
 
-| Feature              | Description                                                                                              |
-| -------------------- | -------------------------------------------------------------------------------------------------------- |
+| Feature              | Description                                                                                             |
+| -------------------- | ------------------------------------------------------------------------------------------------------- |
 | CSV Upload & Preview | Secure file upload with top-5 row table preview ppl-ai-file-upload.s3.amazonaws​                         |
 | Auto-Preprocessing   | LabelEncoder on target + 80/20 train/test split (random_state=21) ppl-ai-file-upload.s3.amazonaws​       |
 | 3 Model Training     | CatBoost, XGBoost, LightGBM with accuracy/precision/recall/F1/ROC-AUC ppl-ai-file-upload.s3.amazonaws+2​ |
@@ -83,12 +83,12 @@ fraud-detection-app/
 │   └── prediction_result.html
 ├── requirements.txt           ### Dependencies
 └── README.md
-
+```
 ## Installation & Setup 
-Prerequisites
+####Prerequisites
 -Python 3.8+
 -pip
----Quick Start---
+### Quick Start
 ### 1. Clone repository
 git clone <your-repo-url>
 cd fraud-detection-app
@@ -115,7 +115,7 @@ Model Training section → Click "Run CatBoost" / "Run XGBoost" / "Run LightGBM"
 → Individual metrics page with scores
 4. Make Predictions
 "Make Predictions" → Upload new CSV → View "Fraud"/"Not Fraud" results table
-# Error Handling: Clear messages guide users (e.g., "Upload dataset first").
+### Error Handling: Clear messages guide users (e.g., "Upload dataset first").
 
 # Future Improvements
  Model persistence (joblib/pickle)
