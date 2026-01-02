@@ -35,23 +35,23 @@ Sample Dataset: Bank-fraud-dataset.csv contains anonymized transactions with Tim
 
 ## Tech Stack
 ### Backend & ML 
-Flask (Web Framework)
-Pandas (Data Processing)
-scikit-learn (Preprocessing, Metrics, Splitting)
-XGBoost (XGBClassifier)
-CatBoost (CatBoostClassifier) 
-LightGBM (LGBMClassifier)
+###### Flask (Web Framework)
+###### Pandas (Data Processing)
+###### scikit-learn (Preprocessing, Metrics, Splitting)
+###### XGBoost (XGBClassifier)
+###### CatBoost (CatBoostClassifier) 
+###### LightGBM (LGBMClassifier)
 
 ### Frontend & UI 
-HTML5 + Jinja2 Templating
-Bootstrap 4 (Responsive Design)
-Custom CSS (Animations, Gradients)
-Google Fonts (Inter, Space Grotesk)
+###### HTML5 + Jinja2 Templating
+###### Bootstrap 4 (Responsive Design)
+###### Custom CSS (Animations, Gradients)
+###### Google Fonts (Inter, Space Grotesk)
 
 ### Data & Templates 
-Bank-fraud-dataset.csv (Labeled Training Data)
-New-bank-dataset.csv (Prediction Input)
-*_metrics.html (Model Performance Reports)
+###### Bank-fraud-dataset.csv (Labeled Training Data)
+###### New-bank-dataset.csv (Prediction Input)
+###### *_metrics.html (Model Performance Reports)
 
 ## Key Features
 
@@ -95,8 +95,8 @@ cd fraud-detection-app
 
 ### 2. Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  #### Linux/Mac
-#### venv\Scripts\activate    #### Windows
+source venv/bin/activate  (Linux/Mac)
+venv\Scripts\activate     (Windows)
 
 ### 3. Install dependencies
 pip install flask pandas scikit-learn xgboost catboost lightgbm
