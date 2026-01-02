@@ -34,7 +34,7 @@ Prediction → Batch fraud detection on new data
 Sample Dataset: Bank-fraud-dataset.csv contains anonymized transactions with Time, V1-V28 (PCA features), Amount, and Class (0=Not Fraud, 1=Fraud).
 
 # Tech Stack
-** Backend & ML **
+### Backend & ML 
 Flask (Web Framework)
 Pandas (Data Processing)
 scikit-learn (Preprocessing, Metrics, Splitting)
@@ -42,13 +42,13 @@ XGBoost (XGBClassifier)
 CatBoost (CatBoostClassifier) 
 LightGBM (LGBMClassifier)
 
-** Frontend & UI **
+### Frontend & UI 
 HTML5 + Jinja2 Templating
 Bootstrap 4 (Responsive Design)
 Custom CSS (Animations, Gradients)
 Google Fonts (Inter, Space Grotesk)
 
-** Data & Templates **
+### Data & Templates 
 Bank-fraud-dataset.csv (Labeled Training Data)
 New-bank-dataset.csv (Prediction Input)
 *_metrics.html (Model Performance Reports)
@@ -64,40 +64,44 @@ New-bank-dataset.csv (Prediction Input)
 | Responsive UI        | Mobile-first Bootstrap cards, hover effects, error alerts ppl-ai-file-upload.s3.amazonaws​               |
 | Session State        | Global variables persist dataset/models across routes ppl-ai-file-upload.s3.amazonaws​                   |
 
-# Project Structure
+## Project Structure
+```text
 fraud-detection-app/
-├── app.py                          # Flask app + ML logic
+├── app.py                     ### Flask app & ML logic
 ├── templates/
-│   ├── index.html                  # Main dashboard UI
-│   ├── index1.html                 # Alternate template
-│   ├── catboost_metrics.html       # CatBoost results
-│   ├── xgboost_metrics.html        # XGBoost results
-│   └── lightgbm_metrics.html       # LightGBM results
+│   ├── index.html             ### Main dashboard UI
+│   ├── index1.html            ### Alternate template
+│   ├── catboost_metrics.html  ### CatBoost results
+│   ├── xgboost_metrics.html   ### XGBoost results
+│   └── lightgbm_metrics.html  ### LightGBM results
 ├── static/
-│   └── index.css                   # Custom styling
-├── Bank-fraud-dataset.csv          # Sample training data
-├── New-bank-dataset.csv            # Sample prediction data
+│   └── index.css              ### Custom styling
+├── data/
+│   ├── Bank-fraud-dataset.csv ### Sample training data
+│   └── New-bank-dataset.csv   ### Sample prediction data
+├── outputs/
+│   └── prediction_result.html
+├── requirements.txt           ### Dependencies
+└── README.md
 
-└── requirements.txt                # Dependencies
-
-# Installation & Setup 
+## Installation & Setup 
 Prerequisites
 -Python 3.8+
 -pip
 ---Quick Start---
-# 1. Clone repository
+### 1. Clone repository
 git clone <your-repo-url>
 cd fraud-detection-app
 
-# 2. Create virtual environment (recommended)
+### 2. Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate    # Windows
+source venv/bin/activate  #### Linux/Mac
+#### venv\Scripts\activate    #### Windows
 
-# 3. Install dependencies
+### 3. Install dependencies
 pip install flask pandas scikit-learn xgboost catboost lightgbm
 
-# 4. Run application
+### 4. Run application
 python app.py
 Open: http://127.0.0.1:5100
 
