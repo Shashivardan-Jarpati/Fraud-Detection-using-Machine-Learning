@@ -85,9 +85,9 @@ fraud-detection-app/
 └── README.md
 ```
 ## Installation & Setup 
-####Prerequisites
--Python 3.8+
--pip
+#### Prerequisites
+###### Python 3.8+
+###### pip
 ### Quick Start
 ### 1. Clone repository
 git clone <your-repo-url>
