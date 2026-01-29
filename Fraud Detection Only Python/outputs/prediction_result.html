@@ -1,0 +1,62 @@
+<!-- prediction_result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Prediction Results</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        
+        <!-- Display the prediction results in a table -->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <!-- Add the column headers based on your DataFrame structure -->
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <!-- ... (add more headers based on your DataFrame) -->
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Use JavaScript to populate the table dynamically -->
+            </tbody>
+        </table>
+
+        <a href="/">Back to Home</a>
+    </div>
+
+    <!-- Include JavaScript to dynamically populate the table -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Parse the JSON result
+            var result = {{ result_json | tojson | safe }};
+
+            // Get the table body
+            var tbody = document.querySelector('tbody');
+
+            // Iterate through the result and populate the table
+            result.forEach(function (row) {
+                var tr = document.createElement('tr');
+
+                // Add cells based on your DataFrame structure
+                tr.innerHTML = '<td>' + row['Column 1'] + '</td>' +
+                                '<td>' + row['Column 2'] + '</td>' +
+                                // ... (add more cells based on your DataFrame) +
+                                '<td>' + row['Prediction'] + '</td>';
+
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+
+</html>

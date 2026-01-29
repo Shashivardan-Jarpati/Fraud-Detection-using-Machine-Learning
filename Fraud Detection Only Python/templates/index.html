@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <title>Fraud Detection System</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <span class="navbar-brand">
+                <svg width="32" height="32" viewBox="0 0 32 32" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <path d="M16 2 L28 8 L28 16 C28 24 16 30 16 30 C16 30 4 24 4 16 L4 8 Z" 
+                          fill="#6b4423" stroke="#8b6f47" stroke-width="1.5"/>
+                    <rect x="12" y="15" width="8" height="7" rx="1" fill="#D8C9A7"/>
+                    <path d="M13 15 L13 12 C13 10.3 14.3 9 16 9 C17.7 9 19 10.3 19 12 L19 15" 
+                          stroke="#D8C9A7" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="16" cy="18" r="1.2" fill="#6b4423"/>
+                    <rect x="15.4" y="18" width="1.2" height="2.5" fill="#6b4423"/>
+                </svg>
+                Fraud Detection System
+            </span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Fraud Detection in Banking Data</h1>
+            <p class="subtitle">Using Advanced Machine Learning Techniques</p>
+        </div>
+
+        {% if message %}
+        <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+
+        <div class="metrics-card">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Upload CSV Dataset:</label>
+                    <input type="file" name="file" accept=".csv" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload Dataset</button>
+            </form>
+        </div>
+
+        <div class="metrics-card">
+            <form action="/split" method="post">
+                <button type="submit" class="btn btn-primary btn-block">Split Dataset (Train/Test)</button>
+            </form>
+        </div>
+
+        <div class="metrics-card">
+            <h3>Train Models</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <form action="/run_catboost" method="post">
+                        <button type="submit" class="btn btn-warning btn-block">Run CatBoost</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form action="/run_xgboost" method="post">
+                        <button type="submit" class="btn btn-info btn-block">Run XGBoost</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form action="/run_lightgbm" method="post">
+                        <button type="submit" class="btn btn-secondary btn-block">Run LightGBM</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-card">
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Upload CSV for Prediction:</label>
+                    <input type="file" name="file" accept=".csv" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Predict Fraud</button>
+            </form>
+        </div>
+
+        {% if X_train_shape %}
+        <div class="metrics-card">
+            <h3>Dataset Split Information</h3>
+            <p><strong>X_train Shape:</strong> {{ X_train_shape }}</p>
+            <p><strong>X_test Shape:</strong> {{ X_test_shape }}</p>
+            <p><strong>y_train Shape:</strong> {{ y_train_shape }}</p>
+            <p><strong>y_test Shape:</strong> {{ y_test_shape }}</p>
+        </div>
+        {% endif %}
+
+        {% if top_rows %}
+        <div class="metrics-card">
+            <h3>Dataset Preview (Top 5 Rows)</h3>
+            {{ top_rows | safe }}
+        </div>
+        {% endif %}
+
+        {% if predicted_table %}
+        <div class="metrics-card">
+            <h3>Prediction Results</h3>
+            {{ predicted_table | safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
